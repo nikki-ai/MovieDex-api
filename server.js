@@ -33,15 +33,15 @@ function handleGetMovie(req, res) {
 
 
   if (genre){
-    results = movies.filter((m) => m.genre.toLowerCase().includes(genre.toLowerCase()));
+    results = results.filter((m) => m.genre.toLowerCase().includes(genre.toLowerCase()));
   }
 
   if (country){
-    results = movies.filter((m) => m.country.toLowerCase().includes(country.toLowerCase()));
+    results = results.filter((m) => m.country.toLowerCase().includes(country.toLowerCase()));
   }
 
   if (avg_vote){
-    results = movies.filter((m) => Number(m.avg_vote) >= Number(avg_vote));
+    results = results.filter((m) => Number(m.avg_vote) >= Number(avg_vote));
   }
 
   res.json(results);
